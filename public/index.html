@@ -14,5 +14,12 @@
 
   <body>
     <my-custom-element>
+
+    <!-- We can listen to events with a little Javascript. -->
+    <script>
+      document.querySelector("my-custom-element").addEventListener('click', function (e) {
+        alert('Clicked!');
+      });
+    </script>
   </body>
 </html>

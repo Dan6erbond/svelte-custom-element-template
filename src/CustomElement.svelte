@@ -1,8 +1,20 @@
 <svelte:options tag="my-custom-element" />
 
 <script lang="ts">
+  import { get_current_component } from "svelte/internal";
   /* Nested elements need to be used as custom elements. */
   import "./NestedElement.svelte";
+
+  /* Web component events can be dispatched with this typed helper. */
+  const thisComponent = get_current_component();
+  function dispatchWcEvent<T>(name, detail: T) {
+    thisComponent.dispatchEvent(
+      new CustomEvent(name, {
+        detail, // detail allows us to pass custom data
+        composed: true, // propagate across the shadow DOM
+      }),
+    );
+  }
 </script>
 
 <main>
@@ -11,6 +23,8 @@
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte
     apps.
   </p>
+  <!-- Button click emits a custom web component event. -->
+  <button on:click={() => dispatchWcEvent("click", { detail: "test" })}>Click Me!</button>
   <nested-element class="custom-class-name" />
 </main>
 
