@@ -1,11 +1,17 @@
 <svelte:options tag="my-custom-element" />
 
+<script lang="ts">
+  /* Nested elements need to be used as custom elements. */
+  import "./NestedElement.svelte";
+</script>
+
 <main>
   <h1>Hello World!</h1>
   <p>
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte
     apps.
   </p>
+  <nested-element class="custom-class-name" />
 </main>
 
 <style>
