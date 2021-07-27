@@ -15,6 +15,8 @@
 </main>
 
 <style>
+  /* Svelte will purge unused CSS classes, so they cannot be passed down to other components. */
+
   main {
     text-align: center;
     padding: 1em;
