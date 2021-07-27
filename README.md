@@ -1,103 +1,84 @@
-_Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
+# Svelte Custom Element Template
 
----
+This is a project template for [Svelte custom elements](https://svelte.dev/docs#Custom_element_API). It lives at https://github.com/Dan6erbond/svelte-custom-element-template.
 
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+To create a new project based on this template, clone this repository:
 
 ```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
+git clone https://github.com/Dan6erbond/svelte-custom-element-template.git
 ```
 
-_Note that you will need to have [Node.js](https://nodejs.org) installed._
+*Note that you will need to have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed on your machine.*
 
-## Get started
+## Get Started
 
-Install the dependencies...
+ 1. Install dependencies:
 
 ```bash
-cd svelte-app
-npm install
+cd svelte-custom-element-template
+yarn
 ```
 
-...then start [Rollup](https://rollupjs.org):
+ 2. Run the development server:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+ 3. Open http://localhost:5000 in your browser. You should see a simple page with a "Hello, world!" message and a counter. Edit a component file in `src` and Rollup's `livereload` plugin will update the page in the browser.
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `srv` commands in the [`package.json`](package.json) file to include the option `--host 0.0.0.0` or add the option when running the development server.
 
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+## What's Included
 
-## Building and running in production mode
+ 1. Svelte custom elements with reactivity, slots and CSS.
+ 2. Nested custom elements to showcase shadow DOM and CSS scoping.
+ 3. Event emitting and event listening in custom elements and [`index.html`](public/index.html).
+ 4. Using reserved keywords in Svelte `<script>` tags.
+ 5. Helpful code comments to understand the concepts when building Web Components.
 
-To create an optimised version of the app:
+## Scripts
+
+ - `build`: Builds the project for production.
+ - `dev`: Runs the development server.
+ - `start`: Starts the production server with built files.
+ - `check`: Runs the Svelte & Typescript code checker.
+ - `lint`: Runs ESLint with the Prettier plugin.
+ - `format`: Runs Prettier.
+
+## Building for Production
+
+ 1. Run the production build:
 
 ```bash
-npm run build
+yarn build
 ```
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+ 2. The built files are in the `dist` folder.
+ 3. Include the bundle in your HTML:
 
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for _any_ path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Svelte Custom Element</title>
+    <script src="bundle.js"></script>
+  </head>
+  <body>
+    <my-custom-element></my-custom-element>
+  </body>
+</html>
 ```
 
-## Using TypeScript
+## Using Typescript
 
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
+This template is already setup with Typescript. Simply add `lang="ts"` to your `<script>` tag to use Typescript or use the `.ts` extension for your Typescript files.
 
-```bash
-node scripts/setupTypeScript.js
-```
+## Contributors
 
-Or remove the script via:
+ - [Dan6erbond](https://github.com/Dan6erbond)
 
-```bash
-rm scripts/setupTypeScript.js
-```
+## License
 
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
