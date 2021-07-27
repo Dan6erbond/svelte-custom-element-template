@@ -15,6 +15,9 @@
       }),
     );
   }
+
+  /* Reactivity works as usual in Svelte. */
+  let counter = 0;
 </script>
 
 <main>
@@ -23,9 +26,12 @@
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte
     apps.
   </p>
-  <nested-element class="custom-class-name" />
   <!-- Button click emits a custom web component event, we need to use a name that doesn't collide with standard HTML events (such as 'click'). -->
   <button on:click={() => dispatchWcEvent("custom-click", { detail: "test" })}>Click Me!</button>
+  <nested-element class="custom-class-name">
+    <!-- Slots work as usual in Svelte. -->
+    <button on:click={() => counter++}> Counter: {counter}</button>
+  </nested-element>
 </main>
 
 <style>

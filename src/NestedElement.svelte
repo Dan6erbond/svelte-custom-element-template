@@ -8,3 +8,4 @@
 </script>
 
 <p class={className}>A nested element.</p>
+<slot />
