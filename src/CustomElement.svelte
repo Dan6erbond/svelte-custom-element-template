@@ -23,9 +23,9 @@
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte
     apps.
   </p>
-  <!-- Button click emits a custom web component event. -->
-  <button on:click={() => dispatchWcEvent("click", { detail: "test" })}>Click Me!</button>
   <nested-element class="custom-class-name" />
+  <!-- Button click emits a custom web component event, we need to use a name that doesn't collide with standard HTML events (such as 'click'). -->
+  <button on:click={() => dispatchWcEvent("custom-click", { detail: "test" })}>Click Me!</button>
 </main>
 
 <style>
