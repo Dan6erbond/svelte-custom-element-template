@@ -1,3 +1,3 @@
-import FindAndReplaceViewer from "./FindAndReplaceViewer.svelte";
+import CustomElement from "./CustomElement.svelte";
 
-export default FindAndReplaceViewer;
+export default CustomElement;

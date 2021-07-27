@@ -1,4 +1,4 @@
-<svelte:options tag="find-and-replace-viewer" />
+<svelte:options tag="my-custom-element" />
 
 <main>
   <h1>Hello World!</h1>
