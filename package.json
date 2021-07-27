@@ -1,7 +1,8 @@
 {
-  "name": "find-and-replace-viewer",
+  "name": "svelte-custom-elements-template",
   "version": "1.0.0",
   "private": true,
+  "author": "RaviAnand Mohabir <moravrav@gmail.com> (https://ravianand.web.app/)",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
