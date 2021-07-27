@@ -7,7 +7,7 @@
 
   /* Web component events can be dispatched with this typed helper. */
   const thisComponent = get_current_component();
-  function dispatchWcEvent<T>(name, detail: T) {
+  function dispatchWcEvent<T>(name: string, detail: T) {
     thisComponent.dispatchEvent(
       new CustomEvent(name, {
         detail, // detail allows us to pass custom data
